@@ -10,7 +10,6 @@ module tt_um_qsn #(
 );
   input wire [LiftingFactor - 1:0] I;
   input wire [ShiftWidth - 1:0] shift;
-  input wire clk;
   output wire [LiftingFactor - 1:0] O;
 
   genvar i;
