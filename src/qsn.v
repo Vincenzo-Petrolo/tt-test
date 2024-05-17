@@ -5,7 +5,6 @@ module tt_um_qsn #(
 ) (
     I,
     shift,
-	clk,
     O
 );
   input wire [LiftingFactor - 1:0] I;
