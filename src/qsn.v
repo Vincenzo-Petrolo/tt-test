@@ -3,15 +3,13 @@ module tt_um_qsn #(
     localparam LiftingFactor = 4,
     localparam ShiftWidth = 2
 ) (
-    I,
-    shift,
-	clk,
-    O
+    input wire [LiftingFactor - 1:0] I,
+    input wire [ShiftWidth - 1:0] shift,
+    output wire [LiftingFactor - 1:0] O,
+    input wire ena,  // always 1 when the design is powered, so you can ignore it
+    input wire clk,  // clock
+    input wire rst_n  // reset_n - low to reset
 );
-  input wire [LiftingFactor - 1:0] I;
-  input wire [ShiftWidth - 1:0] shift;
-  input wire clk;
-  output wire [LiftingFactor - 1:0] O;
 
   genvar i;
   localparam configs_LiftingFactor = 4;
