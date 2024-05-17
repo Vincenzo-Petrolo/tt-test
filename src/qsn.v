@@ -3,7 +3,7 @@ module tt_um_qsn #(
     localparam LiftingFactor = 4,
     localparam ShiftWidth = 2
 ) (
-	input  wire [7:0] ui_in,    // Dedicated inputs
+    input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
     output wire [7:0] uio_out,  // IOs: Output path
@@ -22,7 +22,9 @@ module tt_um_qsn #(
 
   assign I = {ui_in[0], ui_in[1], ui_in[2], ui_in[3]};
   assign shift = {ui_in[4], ui_in[5]};
-  assign uo_out = {O[0], O[1], O[2], O[3]};
+  assign uo_out[LiftingFactor-1:0] = {O[0], O[1], O[2], O[3]};
+  assign uio_oe = 0;
+  assign uio_out = 0;
 
   generate
     for (i = 0; i < LiftingFactor; i = i + 1) begin : gen_replicate
