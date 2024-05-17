@@ -5,14 +5,18 @@ module tt_um_qsn #(
 ) (
     I,
     shift,
+	clk,
     O
 );
   input wire [LiftingFactor - 1:0] I;
   input wire [ShiftWidth - 1:0] shift;
+  input wire clk;
   output wire [LiftingFactor - 1:0] O;
+
   genvar i;
   localparam configs_LiftingFactor = 4;
   wire tmp[0:7];
+
   generate
     for (i = 0; i < configs_LiftingFactor; i = i + 1) begin : gen_replicate
       assign tmp[i] = I[i];
