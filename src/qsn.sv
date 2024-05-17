@@ -15,13 +15,13 @@ module qsn
   /*  package imports  */
   import configs::*;
 (
-    input logic [DWIDTH-1:0] I[LiftingFactor],
-    logic [SEL-1:0] shift,
-    output logic [DWIDTH-1:0] O[LiftingFactor]
+    input logic I[LiftingFactor],
+    logic [ShiftWidth-1:0] shift,
+    output logic O[LiftingFactor]
 );
 
   genvar i;
-  logic [DWIDTH-1:0] tmp[2*LiftingFactor];
+  logic tmp[2*LiftingFactor];
 
   generate;
     for (i=0; i<LiftingFactor; i++) begin : gen_replicate

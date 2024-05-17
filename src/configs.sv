@@ -7,8 +7,8 @@
 package configs;
 
   //  Group: Parameters
-  localparam unsigned LiftingFactor = 81;
-  localparam unsigned DWIDTH = 5;
+  localparam unsigned LiftingFactor = 4;
+  localparam unsigned ShiftWidth = $clog2(LiftingFactor);
 
 endpackage : configs
 
