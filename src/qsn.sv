@@ -11,7 +11,7 @@
 
 `include "configs.sv"
 
-module qsn
+module tt_um_qsn
   /*  package imports  */
   import configs::*;
 (
