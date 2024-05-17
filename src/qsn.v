@@ -25,11 +25,11 @@ module tt_um_qsn #(
   assign uo_out = {O[0], O[1], O[2], O[3]};
 
   generate
-    for (i = 0; i < configs_LiftingFactor; i = i + 1) begin : gen_replicate
+    for (i = 0; i < LiftingFactor; i = i + 1) begin : gen_replicate
       assign tmp[i] = I[i];
-      assign tmp[i+configs_LiftingFactor] = I[i];
+      assign tmp[i+LiftingFactor] = I[i];
     end
-    for (i = 0; i < configs_LiftingFactor; i = i + 1) begin : gen_assignOutput
+    for (i = 0; i < LiftingFactor; i = i + 1) begin : gen_assignOutput
       assign O[i] = tmp[i+shift];
     end
   endgenerate
