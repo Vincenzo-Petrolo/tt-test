@@ -1,8 +1,8 @@
 # Tiny Tapeout project information
 project:
-  title:        "Permutation Network"      # Project title
-  author:       "Vincenzo Petrolo"      # Your name
-  description:  "Barrel shifter"      # One line description of what your project does
+  title:        "AND gate"      # Project title
+  author:       "VLSI Lab"      # Your name
+  description:  "AND gate"      # One line description of what your project does
   language:     "SystemVerilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -10,29 +10,30 @@ project:
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_qsn"
+  top_module:  "topmodule"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
-    - "qsn.v"
+    - "and.sv"
+    - "topmodule.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]:  "I[0]"
-  ui[1]:  "I[1]"
-  ui[2]:  "I[2]"
-  ui[3]:  "I[3]"
-  ui[4]:  "I[4]"
-  ui[5]:  "shift[0]"
-  ui[6]:  "shift[1]"
+  ui[0]:  "a_x"
+  ui[1]:  "b_x"
+  ui[2]:  ""
+  ui[3]:  ""
+  ui[4]:  ""
+  ui[5]:  ""
+  ui[6]:  ""
   ui[7]:  ""
 
   # Outputs
-  uo[0]: "O[0]"
-  uo[1]: "O[1]"
-  uo[2]: "O[2]"
-  uo[3]: "O[3]"
+  uo[0]: "y_x"
+  uo[1]: ""
+  uo[2]: ""
+  uo[3]: ""
   uo[4]: ""
   uo[5]: ""
   uo[6]: ""
